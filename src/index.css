@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  .wood-effect {
+    @apply relative rounded-md;
+    clip-path: polygon(
+      5% 0%,
+      95% 0%,
+      93% 5%,
+      90% 10%,
+      96% 15%,
+      88% 20%,
+      94% 30%,
+      86% 35%,
+      92% 40%,
+      84% 45%,
+      90% 55%,
+      82% 60%,
+      88% 70%,
+      80% 75%,
+      86% 85%,
+      78% 90%,
+      92% 100%,
+      8% 100%,
+      14% 90%,
+      6% 85%,
+      12% 75%,
+      4% 70%,
+      10% 60%,
+      2% 55%,
+      8% 45%,
+      0% 40%,
+      6% 35%,
+      2% 30%,
+      8% 20%,
+      0% 15%,
+      6% 10%,
+      3% 5%
+    );
+    /* background: repeating-linear-gradient(
+        45deg,
+        #8c4c1f,
+        #8c4c1f 10px,
+        #b87333 10px,
+        #b87333 20px
+      ); */
+    background-color: #000;
+    /* background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png"); */
+    background-image: url(".\assets\wood-pattern-1920x1080.png");
+    transform: rotate(-1deg);
+  }
+}
