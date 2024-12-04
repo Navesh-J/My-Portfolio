@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef,useEffect } from "react";
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 import emailjs from '@emailjs/browser';
 
@@ -8,6 +8,28 @@ const Contact = () => {
     email: "",
     message: "",
   });
+
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const popupRef = useRef(null);
+
+  // Toggle Popup
+  const togglePopup = () => {
+    setIsPopupVisible((prev) => !prev);
+  };
+
+  // Close Popup when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (popupRef.current && !popupRef.current.contains(event.target)) {
+        setIsPopupVisible(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -126,14 +148,33 @@ const Contact = () => {
         <h3 className="text-2xl font-serif text-[#f4bec4]">Connect with me:</h3>
         <div className="flex gap-8 items-center space-x-6 mt-5 py-1">
           {/* Gmail Icon */}
-          <a
+          {/* <a
             href="mailto:your-email@example.com?subject=Hello%20There&body=I%20would%20like%20to%20connect%20with%20you."
             target="_blank"
             rel="noopener noreferrer"
             className="text-3xl text-[#755256] hover:text-[#e0d7c6] transition duration-300 transform hover:scale-125"
           >
             <FaEnvelope />
-          </a>
+          </a> */}
+
+          {/* Email Icon with Popup */}
+          <div className="relative">
+            <button
+              onClick={togglePopup}
+              className="text-3xl text-[#755256] hover:text-[#e0d7c6] transition duration-300 transform hover:scale-125"
+            >
+              <FaEnvelope />
+            </button>
+            {isPopupVisible && (
+              <div
+                ref={popupRef}
+                className="fixed w-56 mt-2 bg-[#755256] text-[#f4f4f4] p-3 rounded-md shadow-lg border border-[#3d2c2e]"
+              >
+                <p className="text-sm">navesh.professional@gmail.com</p>
+              </div>
+            )}
+          </div>
+
           {/* LinkedIn Icon */}
           <a
             href="https://linkedin.com/in/naveshj"
