@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -18,20 +19,37 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // For now, just log the data to console
-    console.log("Form submitted", formData);
-    alert("Your message has been sent!");
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+    emailjs
+    .send("service_3fotb63",
+          "template_2uz7ctv",
+          {
+            from_name:formData.name,
+            from_email:formData.email,
+            message:formData.message,
+            to_email:"navesh.professional@gmail.com"
+          },
+          "QLXKhVKz-e5BcUxK-"
+    )
+    .then(
+      ()=>{
+        alert("Your message has been sent successfully!")
+        setFormData({
+          name:"",
+          email:"",
+          message:"",
+        })
+      },
+      (error)=>{
+        console.error("Email failed to send:",error);
+        alert("Failed to send your message. Please try again later.");
+      }
+    );
   };
 
   return (
     <div className="px-24">
       <h2 className="text-center text-3xl font-serif text-[#dddddd] mb-6">
-        Contact Me
+        Summoning Ritual
       </h2>
       <p className="text-lg text-[#f9b9c1] mb-6">
         Feel free to send a message through the form below, or reach out via the
@@ -116,7 +134,6 @@ const Contact = () => {
           >
             <FaEnvelope />
           </a>
-
           {/* LinkedIn Icon */}
           <a
             href="https://linkedin.com/in/naveshj"
