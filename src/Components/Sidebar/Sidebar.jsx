@@ -5,7 +5,7 @@ const Sidebar = () => {
   const categories = [
     { id: "about", title: "The Wanderer's Tales", path: "/about" },
     { id: "skills", title: "The Armory of Skills", path: "/skills" },
-    { id: "projects", title: "Works Wrought by Hand and Mind", path: "/projects" },
+    { id: "projects", title: "Works Wrought by Hands and Mind", path: "/projects" },
     { id: "achievements", title: "Trophies of the Realm", path: "/achievements" },
     { id: "contact", title: "Summoning Circle", path: "/contact" },
   ];

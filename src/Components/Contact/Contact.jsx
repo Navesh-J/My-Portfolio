@@ -147,16 +147,6 @@ const Contact = () => {
       <div className="mt-10">
         <h3 className="text-2xl font-serif text-[#f4bec4]">Connect with me:</h3>
         <div className="flex gap-8 items-center space-x-6 mt-5 py-1">
-          {/* Gmail Icon */}
-          {/* <a
-            href="mailto:your-email@example.com?subject=Hello%20There&body=I%20would%20like%20to%20connect%20with%20you."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-3xl text-[#755256] hover:text-[#e0d7c6] transition duration-300 transform hover:scale-125"
-          >
-            <FaEnvelope />
-          </a> */}
-
           {/* Email Icon with Popup */}
           <div className="relative">
             <button
