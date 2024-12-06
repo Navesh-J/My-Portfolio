@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import video from "../../assets/Running.mp4"
 
 const VideoComponent = () => {
   const videoRef = useRef(null);
@@ -14,7 +15,7 @@ const VideoComponent = () => {
   return (
     <video
       ref={videoRef}
-      src="src\assets\Running.mp4"
+      src={video}
       autoPlay
       loop
       muted

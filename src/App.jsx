@@ -39,6 +39,7 @@ import './App.css';
 import About from './Components/About/About';
 import Sidebar from './Components/Sidebar/Sidebar';
 import Contact from './Components/Contact/Contact';
+import Skills from './Components/Skills/Skills';
 
 function AnimatedRoutes() {
   const location = useLocation(); // Get the current route location
@@ -76,6 +77,19 @@ function AnimatedRoutes() {
               variants={pageVariants}
             >
               <Contact />
+            </motion.div>
+          }
+        />
+        <Route
+          path="/Skills"
+          element={
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={pageVariants}
+            >
+              <Skills />
             </motion.div>
           }
         />
