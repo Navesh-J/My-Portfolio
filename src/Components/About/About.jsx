@@ -37,14 +37,6 @@ const About = () => {
       </p> */}
       </div>
       <div>
-        {/* <video src="src\assets\Running.mp4"
-              // ref={useRef}
-              autoPlay
-              loop
-              muted
-              className="w-80 h-auto opacity-70 hover:opacity-100 transition-opacity duration-500"
-              // onClick={handleVideoClick}
-        ></video> */}
         <VideoComponent/>
       </div>
     </div>
