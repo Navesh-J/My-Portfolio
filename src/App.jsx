@@ -61,7 +61,7 @@ function AnimatedRoutes() {
           }
         />
         <Route
-          path="/Skills"
+          path="/skills"
           element={
             <motion.div
               initial="hidden"
@@ -74,7 +74,7 @@ function AnimatedRoutes() {
           }
         />
         <Route
-          path="/Projects"
+          path="/projects"
           element={
             <motion.div
               initial="hidden"
