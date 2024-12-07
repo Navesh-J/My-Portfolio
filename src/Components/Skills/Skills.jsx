@@ -16,7 +16,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="p-8">
+    <div className="p-8 font-serif">
       <h1 className="text-4xl text-[#dddddd] font-bold mb-4 text-center">
         The Armory of Skills
       </h1>

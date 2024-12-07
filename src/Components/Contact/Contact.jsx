@@ -69,7 +69,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="px-24">
+    <div className="px-24 font-serif">
       <h2 className="text-center text-3xl font-serif text-[#dddddd] mb-6">
         Summoning Ritual
       </h2>
@@ -145,7 +145,7 @@ const Contact = () => {
 
       {/* Contact Info (Optional) */}
       <div className="mt-10">
-        <h3 className="text-2xl font-serif text-[#f4bec4]">Connect with me:</h3>
+        <h3 className="text-2xl text-[#f4bec4]">Connect with me:</h3>
         <div className="flex gap-8 items-center space-x-6 mt-5 py-1">
           {/* Email Icon with Popup */}
           <div className="relative">
