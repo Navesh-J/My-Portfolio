@@ -96,7 +96,7 @@ function App() {
     <Router>
       <div className="flex items-center h-screen transition-all duration-150 bg-slate-950">
         <Sidebar />
-        <main className="flex-1 overflow-hidden">
+        <main className="flex-1 overflow-y-auto max-xl:h-full ">
           <AnimatedRoutes />
         </main>
       </div>
