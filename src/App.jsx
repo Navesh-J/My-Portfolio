@@ -7,6 +7,7 @@ import Contact from './Components/Contact/Contact';
 import Skills from './Components/Skills/Skills';
 import Projects from './Components/Projects/Projects';
 import Homepage from './Components/Homepage/Homepage';
+import ScrollNavigator from './Components/ScrollNavigator/ScrollNavigator';
 
 function AnimatedRoutes() {
   const location = useLocation(); // Get the current route location
@@ -94,6 +95,7 @@ function AnimatedRoutes() {
 function App() {
   return (
     <Router>
+      <ScrollNavigator/>
       <div className="flex items-center h-screen transition-all duration-150 bg-slate-950">
         <Sidebar />
         <main className="flex-1 lg:overflow-hidden overflow-y-auto max-xl:h-full ">

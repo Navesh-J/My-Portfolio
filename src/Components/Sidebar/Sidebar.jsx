@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router";
+import { NavLink,useNavigate } from "react-router";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate=useNavigate();
 
   const categories = [
     { id: "about", title: "The Wanderer's Tales", path: "/about" },
@@ -10,6 +11,11 @@ const Sidebar = () => {
     { id: "projects", title: "Works Wrought by Hands and Mind", path: "/projects" },
     { id: "contact", title: "Summoning Circle", path: "/contact" },
   ];
+
+  const handleNavigation = (path) => {
+    setIsOpen(false);
+    navigate(path); // Navigate manually to update route
+  };
 
   return (
     <div className="md:w-96 w-full bg-none p-5 lg:relative fixed top-0 left-0 z-10">
@@ -39,7 +45,7 @@ const Sidebar = () => {
                   isActive ? "bg-[#5e3c19] scale-105 wood-effect" : "bg-slate-950 hover:scale-105"
                 } `
               }
-              onClick={() => setIsOpen(false)} // Close menu on item click
+              onClick={() => handleNavigation(category.path)} // Close menu on item click
             >
               {category.title}
             </NavLink>
