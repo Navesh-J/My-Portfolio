@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router';
+import transitionSound from '../../assets/sound_effect.mp3'
 
 const sections = ['/', '/about', '/skills', '/projects', '/contact'];
 
@@ -11,6 +12,12 @@ const ScrollNavigator = () => {
   const touchStartTime = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
+  const audioRef = useRef(new Audio(transitionSound));
+
+//   const playSound = () => {
+//     const audio = new Audio(transitionSound);
+//     audio.play().catch((error) => console.log('Sound play error:', error));
+//   };
 
   // Sync currentIndex with the current route
   useEffect(() => {
@@ -83,6 +90,10 @@ const ScrollNavigator = () => {
   // Handle route change and debounce navigation
   useEffect(() => {
     setIsNavigating(true);
+    // playSound();
+    const audio = audioRef.current; // Use the single audio instance
+    audio.currentTime = 0; // Reset audio playback to the start
+    audio.play().catch((error) => console.log('Sound play error:', error)); // Avoids multiple play calls
     navigate(sections[currentIndex]);
     const timeout = setTimeout(() => setIsNavigating(false), 500); // Allow smooth navigation
     return () => clearTimeout(timeout);
