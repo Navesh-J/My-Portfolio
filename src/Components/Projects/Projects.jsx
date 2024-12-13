@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import ttLogo from "../../assets/TaskTracker.png";
 import spotifyLogo from "../../assets/spotifyLogo.png";
 import potato from "../../assets/potato.png";
+import rune from "../../../favicon.png"
 
 const projects = [
   {
@@ -19,19 +20,6 @@ const projects = [
     sourceCode: "https://github.com/Navesh-J/Task-Tracker",
   },
   {
-    title: "Spotify UI Clone",
-    thumbnail: spotifyLogo,
-    shortDescription: "A front-end replica of Spotify's UI showcasing design skills.",
-    description:
-      "A front-end project designed to mimic Spotify's user interface, demonstrating expertise in modern web technologies.",
-    features: [
-      "Pixel-perfect UI replication of Spotify",
-      "Dynamic navigation and interactive elements",
-    ],
-    liveLink: null,
-    sourceCode: "https://github.com/Navesh-J/Spotify-Clone",
-  },
-  {
     title: "Flappy Potato",
     thumbnail: potato,
     shortDescription: "A Unity-powered game with physics-based mechanics.",
@@ -44,6 +32,33 @@ const projects = [
     ],
     liveLink: null,
     sourceCode: "https://github.com/Navesh-J/Flappy-Potato",
+  },
+  {
+    title: "Portfolio",
+    thumbnail: rune,
+    shortDescription: "A classic themed showcase of projects, skills, and creativity.",
+    description:
+      "A unique personal portfolio inspired by the aesthetics of medieval tales. It showcases the developer's journey through different sections in a highly interactive and visually compelling format.",
+    features: [
+      "Fantasy-themed UI with medieval storytelling elements.",
+      "Dynamic routing based on user actions: scroll navigation and clickable sidebar options.",
+      "A responsive design with a fully mobile-compatible interface.",
+    ],
+    liveLink: "https://navesh.vercel.app/",
+    sourceCode: "https://github.com/Navesh-J/My-Portfolio",
+  },
+  {
+    title: "Spotify UI Clone",
+    thumbnail: spotifyLogo,
+    shortDescription: "A front-end replica of Spotify's UI showcasing design skills.",
+    description:
+      "A front-end project designed to mimic Spotify's user interface, demonstrating expertise in modern web technologies.",
+    features: [
+      "Pixel-perfect UI replication of Spotify",
+      "Dynamic navigation and interactive elements",
+    ],
+    liveLink: null,
+    sourceCode: "https://github.com/Navesh-J/Spotify-Clone",
   },
 ];
 
@@ -79,8 +94,8 @@ const Projects = () => {
         Each crafted wonder showcases the skills and passion woven into its
         creation.
       </p>
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"> */}
-      <div className="flex">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* <div className="flex"> */}
         {projects.map((project, index) => (
           <div key={index} className="relative shadow-xl">
             {/* Project Thumbnail */}
