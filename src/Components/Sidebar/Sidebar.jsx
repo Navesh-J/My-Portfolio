@@ -1,14 +1,18 @@
 import React, { useState } from "react";
-import { NavLink,useNavigate } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const categories = [
     { id: "about", title: "The Wanderer's Tales", path: "/about" },
     { id: "skills", title: "The Armory of Skills", path: "/skills" },
-    { id: "projects", title: "Works Wrought by Hands and Mind", path: "/projects" },
+    {
+      id: "projects",
+      title: "Works Wrought by Hands and Mind",
+      path: "/projects",
+    },
     { id: "contact", title: "Summoning Circle", path: "/contact" },
   ];
 
@@ -42,7 +46,9 @@ const Sidebar = () => {
               to={category.path}
               className={({ isActive }) =>
                 `block p-3 px-8 text-lg font-serif text-white transition-all duration-150 text-center shadow-md border-[#2b2620] border-x-2 ${
-                  isActive ? "bg-[#5e3c19] scale-105 wood-effect" : "bg-slate-950 hover:scale-105"
+                  isActive
+                    ? "bg-[#5e3c19] scale-105 wood-effect"
+                    : "bg-slate-950 hover:scale-105"
                 } `
               }
               onClick={() => handleNavigation(category.path)} // Close menu on item click
@@ -51,7 +57,27 @@ const Sidebar = () => {
             </NavLink>
           </li>
         ))}
+        <li className="lg:mt-10">
+          <a
+            href="/navesh_resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block p-3 px-8 text-lg font-serif text-white transition-all duration-150 text-center shadow-md border-[#2b2620] border-x-2 bg-slate-950 hover:scale-105"
+          >
+            Download Resume
+          </a>
+        </li>
       </ul>
+      {/* <div>
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-12 left-16 block p-3 px-8 text-lg font-serif text-white transition-all duration-150 text-center shadow-md border-[#2b2620] border-x-2"
+        >
+          Download Resume
+        </a>
+      </div> */}
     </div>
   );
 };

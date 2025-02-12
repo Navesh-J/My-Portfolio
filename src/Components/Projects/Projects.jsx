@@ -6,6 +6,20 @@ import rune from "../../../favicon.png"
 
 const projects = [
   {
+    title: "Portfolio",
+    thumbnail: rune,
+    shortDescription: "A classic themed showcase of projects, skills, and creativity.",
+    description:
+      "A unique personal portfolio inspired by the aesthetics of medieval tales. It showcases the developer's journey through different sections in a highly interactive and visually compelling format.",
+    features: [
+      "Fantasy-themed UI with medieval storytelling elements.",
+      "Dynamic routing based on user actions: scroll navigation and clickable sidebar options.",
+      "A responsive design with a fully mobile-compatible interface.",
+    ],
+    liveLink: "https://navesh.vercel.app/",
+    sourceCode: "https://github.com/Navesh-J/My-Portfolio",
+  },
+  {
     title: "Task Tracker",
     thumbnail: ttLogo,
     shortDescription: "A functional to-do list app built with Local Storage.",
@@ -32,20 +46,6 @@ const projects = [
     ],
     liveLink: null,
     sourceCode: "https://github.com/Navesh-J/Flappy-Potato",
-  },
-  {
-    title: "Portfolio",
-    thumbnail: rune,
-    shortDescription: "A classic themed showcase of projects, skills, and creativity.",
-    description:
-      "A unique personal portfolio inspired by the aesthetics of medieval tales. It showcases the developer's journey through different sections in a highly interactive and visually compelling format.",
-    features: [
-      "Fantasy-themed UI with medieval storytelling elements.",
-      "Dynamic routing based on user actions: scroll navigation and clickable sidebar options.",
-      "A responsive design with a fully mobile-compatible interface.",
-    ],
-    liveLink: "https://navesh.vercel.app/",
-    sourceCode: "https://github.com/Navesh-J/My-Portfolio",
   },
   {
     title: "Spotify UI Clone",
