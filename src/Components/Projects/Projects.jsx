@@ -2,13 +2,14 @@ import React, { useState, useRef, useEffect } from "react";
 import ttLogo from "../../assets/TaskTracker.png";
 import spotifyLogo from "../../assets/spotifyLogo.png";
 import potato from "../../assets/potato.png";
-import rune from "../../../favicon.png"
+import rune from "../../../favicon.png";
 
 const projects = [
   {
     title: "Portfolio",
     thumbnail: rune,
-    shortDescription: "A classic themed showcase of projects, skills, and creativity.",
+    shortDescription:
+      "A classic themed showcase of projects, skills, and creativity.",
     description:
       "A unique personal portfolio inspired by the aesthetics of medieval tales. It showcases the developer's journey through different sections in a highly interactive and visually compelling format.",
     features: [
@@ -17,7 +18,8 @@ const projects = [
       "A responsive design with a fully mobile-compatible interface.",
     ],
     liveLink: "https://navesh.vercel.app/",
-    sourceCode: "https://github.com/Navesh-J/My-Portfolio",
+    //sourceCode: "https://github.com/Navesh-J/My-Portfolio",
+    sourceCode: null,
   },
   {
     title: "Task Tracker",
@@ -50,7 +52,8 @@ const projects = [
   {
     title: "Spotify UI Clone",
     thumbnail: spotifyLogo,
-    shortDescription: "A front-end replica of Spotify's UI showcasing design skills.",
+    shortDescription:
+      "A front-end replica of Spotify's UI showcasing design skills.",
     description:
       "A front-end project designed to mimic Spotify's user interface, demonstrating expertise in modern web technologies.",
     features: [
@@ -95,7 +98,7 @@ const Projects = () => {
         creation.
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      {/* <div className="flex"> */}
+        {/* <div className="flex"> */}
         {projects.map((project, index) => (
           <div key={index} className="relative shadow-xl">
             {/* Project Thumbnail */}
@@ -118,7 +121,9 @@ const Projects = () => {
             {visiblePopupIndex === index && (
               <div
                 ref={popupRef}
-                className={'absolute top-0 left-0 bg-[#755256] text-[#f4f4f4] p-4 rounded-md shadow-lg border border-[#3d2c2e] z-50'}
+                className={
+                  "absolute top-0 left-0 bg-[#755256] text-[#f4f4f4] p-4 rounded-md shadow-lg border border-[#3d2c2e] z-50"
+                }
               >
                 <h3 className="text-lg font-bold">{project.title}</h3>
                 <p className="text-sm mt-2">{project.description}</p>
@@ -138,14 +143,16 @@ const Projects = () => {
                       View Live
                     </a>
                   )}
-                  <a
-                    href={project.sourceCode}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400"
-                  >
-                    Source Code
-                  </a>
+                  {project.sourceCode && (
+                    <a
+                      href={project.sourceCode}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-400"
+                    >
+                      Source Code
+                    </a>
+                  )}
                 </div>
               </div>
             )}
